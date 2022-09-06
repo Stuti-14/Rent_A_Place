@@ -1,0 +1,20 @@
+<div class="banner">
+    <app-header></app-header>
+    <div class="html">
+        <div class="box row">
+            <input #ques type="text" placeholder="ask your Question here" style="width: 80%;" class="col">
+            <button class="col-2 btn btn-warning" (click)="addQ(ques.value)">Chat</button>
+        </div>
+        <div *ngFor="let ele of Questions">
+            <div class="box">
+                <div class="each">
+                    <h5>{{ele.question}} <small><a type="button"
+                        class="name">{{ele.username}}</a></small></h5>
+                    <div *ngFor="let ans of ele.answers">
+                        <p>{{ans.answer}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

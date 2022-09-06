@@ -1,0 +1,57 @@
+<!-- <div class="banner">
+    <div *ngIf="! isLoggedin()">
+        <div class="formbox">
+
+            <form class="log" #loginref="ngForm" (ngSubmit)="login()">
+                <h1>USER LOGIN</h1>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Username</label>
+                    <input type="text" class="form-control" name="username" placeholder="Username" [(ngModel)]="user.username" #username="ngModel" required [class.is-invalid]="username.invalid && username.touched">
+                    <small class="text-danger" [class.d-none]="username.valid || username.untouched">*username is Required</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="user.password" #password="ngModel" required [class.is-invalid]="password.invalid && password.touched">
+                    <small class="text-danger" [class.d-none]="password.valid || password.untouched">*password is Required</small>
+                </div>
+
+                <button type="submit" class="btn btn-primary ">Submit</button><span>Are you a new user?</span>
+                <a routerLink="/register" class="register">Register</a>
+                <br>
+                <small class="text-danger">{{msg}}</small>
+            </form>
+        </div>
+    </div>
+    <div *ngIf="isLoggedin()" class="formbox">
+        <h1>Already Loggedin</h1>
+    </div>
+</div> -->
+
+<body>
+    <app-header></app-header>
+    <div class="center" *ngIf="! isLoggedin()">
+        <h1>Login</h1>
+        <form class="log" #loginref="ngForm" (ngSubmit)="login()">
+
+            <div class="txt_field">
+                <input type="text" [(ngModel)]="user.username" name="username" #username="ngModel" required [class.is-invalid]="username.invalid && username.touched">
+                <small class="text-danger" [class.d-none]="username.valid || username.untouched">*username is Required</small>
+                <span></span>
+                <label>UserName</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" [(ngModel)]="user.password" name="password" #password="ngModel" required [class.is-invalid]="password.invalid && password.touched">
+                <small class="text-danger" [class.d-none]="password.valid || password.untouched">*password is Required</small>
+                <span></span>
+                <label>Password</label>
+            </div>
+            <div>
+                <button type="submit" class="button" (click)="login()">Submit</button>
+            </div>
+            <a routerLink="/register" class="register">Register</a>
+        </form>
+    </div>
+    <div *ngIf="isLoggedin()" class="formbox">
+        <h1>Already Loggedin</h1>
+    </div>
+</body>

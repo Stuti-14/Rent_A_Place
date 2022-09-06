@@ -1,0 +1,44 @@
+<!-- <table class="table">
+    <thead>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Address</th>
+        <th scope='col'>Update</th>
+        <th scope='col'>Delete</th>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let ele of users">
+            <th scope="row">{{ele.username}}</th>
+            <td>{{ele.email}}</td>
+            <td> <input type="text" placeholder="{{ele.phone}}" #number></td>
+            <td> <input type="text" placeholder="{{ele.address}}" #address></td>
+            <td><button class="btn btn-warning" (click)="update(ele,number.value,address.value)">Update</button></td>
+            <td><button class="btn btn-danger" (click)="deleteQ(ele)">delete</button></td>
+        </tr>
+    </tbody>
+</table> -->
+
+<body>
+    <app-admin-header></app-admin-header>
+    <div class="container-fluid mt-5">
+        <div class="row mt-3">
+            <div class="col-lg-4 mt-2 mb-3" *ngFor="let ele of users ">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top image" src="../../assets/user.webp" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ele.username}}</h5>
+                        <p class="card-text">{{ele.email}}</p>
+                        <input type="text" placeholder="{{ele.phone}}" #number>
+                        <div class="button-contener">
+                            <a class="btn btn-danger btn-sm delete button" (click)="update(ele,number.value)">Update</a>
+                            <a class="btn btn-danger btn-sm delete button" (click)="deleteQ(ele)">Delete</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

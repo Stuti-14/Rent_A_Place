@@ -1,0 +1,22 @@
+.row {
+    border: 2px solid #EEEEEE;
+    margin: 10px;
+}
+
+img {
+    width: 50%;
+    border-radius: 10px;
+}
+
+.checkout {
+    justify-content: center;
+    padding: 20px;
+}
+
+.out {
+    background-color: darkcyan;
+}
+
+.banner {
+    background-color: bisque;
+}

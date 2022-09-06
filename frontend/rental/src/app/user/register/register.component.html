@@ -1,0 +1,38 @@
+<body>
+    <div class="container">
+        <div class="title">Registration</div>
+        <form #formref="ngForm" (ngSubmit)="register()">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">UserName</span>
+                    <input type="text" class="form-control" name="username" placeholder="Enter your name" [(ngModel)]="user.username" #username="ngModel" required [class.is-invalid]="username.invalid && username.touched">
+                    <small class="text-danger" [class.d-none]="username.valid || username.untouched">*username is Required</small>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="text" class="form-control" name="email" placeholder="Enter your email" [(ngModel)]="user.email" #email="ngModel" required pattern="[A-Za-z0-9]+@[a-z]+\.[a-z]{2,3}" [class.is-invalid]="email.invalid && email.touched">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <div *ngIf="email.errors && (email.invalid && email.touched)">
+                        <small class="text-danger" *ngIf="email.errors['required']">*Email is Required</small>
+                        <small class="text-danger" *ngIf="email.errors['pattern']">*Enter the valid Email id </small>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="text" class="form-control" name="password" placeholder="Enter your password" [(ngModel)]="user.password" #password="ngModel" required [class.is-invalid]="password.invalid && password.touched">
+                    <small class="text-danger" [class.d-none]="password.valid || password.untouched">*password is Required</small>
+                </div>
+                <div class="input-box">
+                    <span class="details">Phone</span>
+                    <input type="text" class="form-control" name="phone" placeholder="Enter your phone" [(ngModel)]="user.phone" #phone="ngModel" required [class.is-invalid]="phone.invalid && phone.touched">
+                    <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">*phone is Required</small>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="Register"> Already a user? <a routerLink="../login">Login</a>
+            </div>
+
+        </form>
+
+    </div>
+</body>

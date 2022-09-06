@@ -1,0 +1,27 @@
+<div class="banner">
+    <app-admin-header></app-admin-header>
+    <div class="html">
+        <div *ngFor="let ele of Questions">
+            <div class="box">
+                <div class="each">
+                    <h5>{{ele.question}} <small><a type="button"
+                        class="name">{{ele.username}} {{ele.userid}}</a></small></h5>
+                    <div *ngFor="let ans of ele.answers">
+                        <p>{{ans.answer}}</p>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-7">
+
+                            <input type="text" #answer placeholder="Reply">
+                        </div>
+                        <div class="col-5">
+                            <button class="btn btn-primary button" (click)="addanswer(ele,answer.value)">Send</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

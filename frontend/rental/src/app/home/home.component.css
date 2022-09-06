@@ -1,0 +1,19 @@
+.card {
+    margin: 20px;
+    box-shadow: 0 0 10px;
+    border: 5px solid #F1F1F1;
+}
+
+i {
+    position: relative;
+    margin-left: 95%;
+}
+
+img {
+    height: 300px;
+}
+
+.banner {
+    background-color: #132a13;
+    width: 100%;
+}
